@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For documentation about this file, please visit http://www.genopro.com/sdk/Report-Generator/Configuration/ -->
+<Skin Name="Narrative Report Redux" Language="EN">
+	<Version>0.0.2</Version>
+	<DateLastModified>26-Jun-2010</DateLastModified>
+	<DateCreation>Jun-2010</DateCreation>
+	<Url Preview="http://familytrees.genopro.com" Download="http://www.genopro.com/" />
+
+	<Authors>
+    <Author Name="mindless_mind" Version="0.0.2" DateFirstModified="26-Jun-2010" Contact="dlugolecki.rafal@gmail.com" Comment="Creation. Initial Graphic." />
+    <Author Name="mindless_mind" Version="0.0.3" DateLastModified="18-Sep-2010" Contact="dlugolecki.rafal@gmail.com" Comment="First working version of Abstraction Layer." />
+	</Authors>
+  
+	<ReportGenerator ScriptLanguage="JScript">
+    
+<!--    Create Abstract Layer Library used to generate Report    -->
+    <Report Template="Code/abstraction/win/generate.js" />
+    
+<!--    Generate Report Files    -->
+    <Report Template="index.html" />
+<!--		<Report Template="individual.htm" OutputFile="{Name.LastOrLast2:25}-{Name.FirstAndMiddle:35}-{id}.htm" For="Individuals" LoopItemName="i" />-->
+
+		<StartPage>index.html</StartPage>
+
+	</ReportGenerator>
+</Skin>

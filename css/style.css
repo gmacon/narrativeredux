@@ -1,0 +1,310 @@
+/**
+ *  General 
+ */
+body {
+    background-color: #B05F3C;
+/*    background-color: #FFFFFF;*/
+}
+
+a {
+    text-decoration: none;
+/*    color: #444444;*/
+    color: #FF9331;
+}
+a:hover {
+/*    color: #888888;*/
+    color: #FFBF48;
+}
+
+div {
+/*    border: 2px solid gray;*/
+}
+
+h1, h2, h3, 
+ul, ol, div, a {
+    margin: 0px;
+    padding: 0px;
+}
+
+label {
+    padding-left: 0px;
+}
+
+sup {
+    display: inline;
+}
+
+img {
+    border-width: 0px;
+}
+
+small,
+.mouse-is-over > label > small {
+    font-size: smaller;
+}
+
+div.main {
+    float: left;
+    width: 100%;
+/*    border: 2px solid gray;*/
+}
+
+div.header,
+div.footer {
+    float: left;
+    clear: left;
+    width: 100%;
+/*    border: 2px solid blue;*/
+}
+
+#sidebar {
+    float: left;
+    width: 20%;
+}
+
+#content {
+/*    border: 2px solid yellow;*/
+/*    margin-left: 310px;*/
+    margin-left: auto;
+    width: 80%;
+}
+
+.footer {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+/**
+ *  Toggler
+ */
+div.collapsed > div {
+    display: none;
+}
+
+div.expanded > div {
+    display: list-item;
+}
+
+.mouse-is-over > label {
+    padding-left: 4px;
+}
+
+/**
+ *  Gender
+ */
+.gender_ {
+    background-image: url('./images/gender_.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+
+.gender_M {
+    background-image: url('./images/gender_Ms.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+
+.gender_F {
+    background-image: url('./images/gender_Fs.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+
+.gender_P {
+    background-image: url('./images/gender_P.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 16px;
+}
+
+/**
+ *  Photo icon
+ *  Thing/person has photo?
+ */
+/*Add photo to links background. (In order to remove duplicated links in html structure)*/
+.photographied a {
+    padding-right: 18px;
+    background-image: url('./images/photo.gif');
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+/**
+ *  Header
+ */
+ .header {
+     margin-top: 10px;
+ }
+ 
+ .header-list {
+     list-style: none;
+     float: left;
+ }
+ 
+.header-item {
+    float: left;
+}
+
+.header-home a {
+    background-image: url('./images/toc_home.jpg');
+    background-repeat: no-repeat;
+/*    Image is 32x32: 16=top=bottom=left=right*/
+    padding: 16px 16px 16px 16px;
+}
+
+.header-toc-individuals a {
+    background-image: url('./images/toc_individuals.jpg');
+    background-repeat: no-repeat;
+/*    Image is 32x32: 16=top=bottom=left=right*/
+    padding: 16px 16px 16px 16px;
+}
+
+/**
+ *  Table Of Contents
+ */
+.toc-individuals {
+/*    width: 300px;*/
+}
+
+.toc-individual,
+.individual-information {
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+}
+
+.toc-individual-surname-first-letter > .collapsed {
+    float: left;
+}
+/*.collapsed .toc-individual-surname-first-letter {*/
+/*    float: left;*/
+/*}*/
+
+/*.expanded .toc-individual-surname-first-letter {*/
+/*    clear: left;*/
+/*}*/
+
+.toc-individual-surname-first-letter > .mouse-is-over > label {
+    padding-left: 4px;
+    padding-right: 4px;
+    color: #ffffff;
+}
+
+.toc-individual-surname {
+    clear: right;
+}
+
+.toc-item {
+    padding-left: 5px;
+}
+.toc-list > div {
+    margin-left: 5px;
+}
+
+.individual-information label {
+    font-weight: bold;
+}
+
+.individual-birth-date {
+    padding-left: 3px;
+}
+
+/**
+ *  Annotation
+ */
+.annotation {
+    font-size: small;
+    list-style: none;
+    padding: 0px 0px 0px 0px;
+}
+
+.annotation .annotation-comment {
+    position: relative;
+    left: 10px;
+}
+
+/**
+ *  Front page
+ */
+.popular-content {
+/*    border: 2px solid yellow;*/
+/*    float: right;*/
+}
+
+.popular-names,
+.popular-places {
+    float: left;
+    display: inline;
+    width: 48%;
+    padding-top: 5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-bottom: 5px;
+}
+
+.popular-names-list,
+.popular-places-list {
+    float: left;
+    list-style: none;
+    padding-left: 2px;
+}
+
+.popular-names-list li,
+.popular-places-list li {
+    float: left;
+    padding: 1px 2px;
+}
+
+.popular-names small,
+.popular-places small {
+    padding-left: 2px;
+} 
+
+/**
+ *  Individual page
+ */
+ .individual-title {
+     font-size: 24px;
+ }
+ 
+.individual-information {
+    display: block;
+    padding-top: 5px;
+    padding-left: 5px;
+} 
+
+.individual-pictures {
+    display: block;
+    float: left;
+    padding: 10px;
+    width: 200px;
+}
+
+.individual-pictures img {
+    width: 200px;
+    height: 250px;
+}
+
+.individual-pictures .caption {
+    text-align: right;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+
+.individual-narrative div {
+    display: inline;
+}
+
+.education-item,
+.occupation-item,
+.occupancy-item,
+.additional-item {
+/*We aren't using padding-left (because it don't work) because of left-floated individual picture. */
+    position: relative;
+    left: 10px;
+    padding-bottom: 10px;
+}
