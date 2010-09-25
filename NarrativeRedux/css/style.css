@@ -49,7 +49,7 @@ div.main {
 /*    border: 2px solid gray;*/
 }
 
-div.header,
+div.menu,
 div.footer {
     float: left;
     clear: left;
@@ -57,16 +57,11 @@ div.footer {
 /*    border: 2px solid blue;*/
 }
 
-#sidebar {
-    float: left;
-    width: 20%;
-}
-
 #content {
 /*    border: 2px solid yellow;*/
 /*    margin-left: 310px;*/
     margin-left: auto;
-    width: 80%;
+    width: 100%;
 }
 
 .footer {
@@ -95,28 +90,28 @@ div.expanded > div {
  *  Gender
  */
 .gender_ {
-    background-image: url('./images/gender_.gif');
+    background-image: url('../images/gender_.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_M {
-    background-image: url('./images/gender_Ms.gif');
+    background-image: url('../images/gender_Ms.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_F {
-    background-image: url('./images/gender_Fs.gif');
+    background-image: url('../images/gender_Fs.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_P {
-    background-image: url('./images/gender_P.gif');
+    background-image: url('../images/gender_P.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
@@ -127,38 +122,38 @@ div.expanded > div {
  *  Thing/person has photo?
  */
 /*Add photo to links background. (In order to remove duplicated links in html structure)*/
-.photographied a {
+.individual-toc a .photographied {
     padding-right: 18px;
-    background-image: url('./images/photo.gif');
+    background-image: url('../images/photo.gif');
     background-repeat: no-repeat;
     background-position: right center;
 }
 
 /**
- *  Header
+ *  Menu
  */
- .header {
+ .menu {
      margin-top: 10px;
  }
  
- .header-list {
+ .menu-list {
      list-style: none;
      float: left;
  }
  
-.header-item {
+.menu-item {
     float: left;
 }
 
-.header-home a {
-    background-image: url('./images/toc_home.jpg');
+.menu-home a {
+    background-image: url('../images/toc_home.jpg');
     background-repeat: no-repeat;
 /*    Image is 32x32: 16=top=bottom=left=right*/
     padding: 16px 16px 16px 16px;
 }
 
-.header-toc-individuals a {
-    background-image: url('./images/toc_individuals.jpg');
+.menu-individuals-toc a {
+    background-image: url('../images/toc_individuals.jpg');
     background-repeat: no-repeat;
 /*    Image is 32x32: 16=top=bottom=left=right*/
     padding: 16px 16px 16px 16px;
@@ -167,17 +162,18 @@ div.expanded > div {
 /**
  *  Table Of Contents
  */
-.toc-individuals {
+.individuals-toc {
 /*    width: 300px;*/
 }
 
-.toc-individual,
+.individual-toc,
 .individual-information {
     list-style: none;
     padding: 0px 0px 0px 0px;
 }
 
-.toc-individual-surname-first-letter > .collapsed {
+/*First letter of surname*/
+.individual-toc-depth-1 > .collapsed {
     float: left;
 }
 /*.collapsed .toc-individual-surname-first-letter {*/
@@ -188,20 +184,27 @@ div.expanded > div {
 /*    clear: left;*/
 /*}*/
 
-.toc-individual-surname-first-letter > .mouse-is-over > label {
+.individual-toc-depth-1 > .mouse-is-over > label {
     padding-left: 4px;
     padding-right: 4px;
     color: #ffffff;
 }
 
-.toc-individual-surname {
+/*Surname*/
+.individual-toc-depth-2 {
     clear: right;
 }
 
-.toc-item {
-    padding-left: 5px;
+.toc-list {
+  list-style: none;
 }
-.toc-list > div {
+
+.toc-item {
+  display: block;
+  padding-left: 5px;
+}
+
+.toc-list > li {
     margin-left: 5px;
 }
 

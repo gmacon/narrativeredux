@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- For documentation about this file, please visit http://www.genopro.com/sdk/Report-Generator/Configuration/ -->
-<Skin Name="Narrative Report Redux" Language="EN">
+<Skin Name="Mindless Skin JS" Language="EN">
 	<Version>0.0.2</Version>
 	<DateLastModified>26-Jun-2010</DateLastModified>
 	<DateCreation>Jun-2010</DateCreation>
@@ -18,9 +18,11 @@
     
 <!--    Generate Report Files    -->
     <Report Template="index.html" />
-<!--		<Report Template="individual.htm" OutputFile="{Name.LastOrLast2:25}-{Name.FirstAndMiddle:35}-{id}.htm" For="Individuals" LoopItemName="i" />-->
+    <Report Template="individuals_toc.html" />
+<!--    <Report Template="individual.html" OutputFile="{Name.LastOrLast2:25}-{Name.FirstAndMiddle:35}-{id}.html" For="Individuals" LoopItemName="i" />-->
+		<Report Template="individual.html" OutputFile="{id}.html" For="Individuals" LoopItemName="i" />
 
-		<StartPage>index.html</StartPage>
+		<StartPage>individuals_toc.html</StartPage>
 
 	</ReportGenerator>
 </Skin>

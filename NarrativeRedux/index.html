@@ -1,24 +1,31 @@
-<%[@IncludeFile "Code\abstraction\lib.js" ]%>
+<%[@IncludeFile "Code\abstraction\lib.js";]%>
 <html>
   <head>
     <meta http-equiv="Content-Language" content="EN">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <script src="js/jquery-1.4.2.js" type="text/javascript"></script>
-    <script src="js/mindless-effects.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="./js/mindless-effects.js"></script>
   </head>
 <body>
-  <%[
-Report.LogComment('index generation started') ;
+<%[
+
+/*
+ * TODO:
+ * Rewrite file.
+ */
+
+Report.LogComment('index generation started');
 var people = new People(true); // true = ordered
 var list = people.collection;
 for (var i=0; i<list.count; i++) {
     p = new Person(list(i)); // ordered
-    Report.WriteFormattedBr("{&t}, {&t}", p.name_last(), p.name_first_and_middle());
+    Report.WriteFormattedBr("<a href='./{}.html'>{&t}, {&t}</a>", p.id(), p.name_last_or_last2(), p.name_first_and_middle());
 }
 Report.LogComment('index generation completed') ;
-  
-  ]%>
+
+]%>
+
 </body>
 
 </html>

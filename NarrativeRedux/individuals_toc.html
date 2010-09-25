@@ -1,0 +1,54 @@
+<%[
+/*
+ * Idea is to hide this from viewing. Ajax should be used to retrieve individuals.
+ * Access to this data (in my personal opinion) should be by the upper menu.
+ * Something like:
+ * menu <- on_mouse_over
+ *   -(first letter of each surname) <- on_mouse_over
+ *     -(surname) <- on_mouse_over
+ *       -(all individuals with specified surname)
+ *
+ * More graphical example...
+ *  [menu]
+ *    |-----------|
+ *    |A  B  C |D||
+ *    |--------|Danowicz--| (surnames)
+ *             |Derwisz   |
+ *             |Długołęcki|
+ *             |---|Andrzej| (names)
+ *                 |Norbert|
+ *                 |Rafał  |
+ *                 |-------|
+ */
+]%>
+<%[@IncludeFile "Code\abstraction\lib.js";]%>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Language" content="@[]@" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%[]%></title>
+<!--    <meta name="description" content="@[]@" />-->
+<!--    <meta name="keywords" content="@[]@" />-->
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+<!--    <script type="text/javascript" src="jquery-1.4.2.js"></script>-->
+<!--    <script type="text/javascript" src="mindless-effects.js"></script>-->
+  </head>
+  <body>
+    <div class="main">
+        <div class="header">
+            <%[ WriteStandardMenu(); ]%>
+        </div>
+        <div id="content" class="individuals-toc">
+            <%[
+            (new ToC(new People(true), "individual")).write();
+            //WriteIndividualsToc();
+            ]%>
+        </div>
+        <div class="footer">
+            <%[ WriteStandardFooter(); ]%>
+        </div>
+    </div>
+  </body>
+</html>
