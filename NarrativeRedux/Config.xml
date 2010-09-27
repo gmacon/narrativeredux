@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- For documentation about this file, please visit http://www.genopro.com/sdk/Report-Generator/Configuration/ -->
 <Skin Name="Narrative Report Redux" Language="EN">
-	<Version>0.0.2</Version>
-	<DateLastModified>26-Jun-2010</DateLastModified>
+	<Version></Version>
+	<DateLastModified></DateLastModified>
 	<DateCreation>Jun-2010</DateCreation>
 	<Url Preview="http://familytrees.genopro.com" Download="http://www.genopro.com/" />
 
 	<Authors>
-    <Author Name="mindless_mind" Version="0.0.2" DateFirstModified="26-Jun-2010" Contact="dlugolecki.rafal@gmail.com" Comment="Creation. Initial Graphic." />
-    <Author Name="mindless_mind" Version="0.0.3" DateLastModified="18-Sep-2010" Contact="dlugolecki.rafal@gmail.com" Comment="First working version of Abstraction Layer." />
+		<Author Name="mindless_mind" Version="0.0.2" DateFirstModified="26-Jun-2010" Contact="dlugolecki.rafal@gmail.com" Comment="Creation. Initial Graphic." />
+		<Author Name="mindless_mind" Version="0.0.3" DateLastModified="18-Sep-2010" Contact="dlugolecki.rafal@gmail.com" Comment="First working version of Abstraction Layer." />
+		<Author Name="Narrative Redux Team" Version="" DateFirstModified="20-Sep-2010" Contact="http://github.com/gmacon/narrativeredux" Comment="See git log for authors." />
 	</Authors>
   
 	<ReportGenerator ScriptLanguage="JScript">
