@@ -2,7 +2,7 @@
  *  Toggle between collapsed and expanded styles
  */
 function toggler() {
-      $(this).parent("div").toggleClass("collapsed").toggleClass("expanded");
+      $(this).parent("ul").toggleClass("collapsed");
 }
 
 
@@ -14,9 +14,11 @@ function loader(e) {
     var from  = $(this).attr("href");
     
 //    ./home.html -> home
-    var class_name = from.substring(2, from.lastIndexOf('.'));
+//    var class_name = from.substring(2, from.lastIndexOf('.'));
 //    e.g.: get #content, set class: home, load: ./home.html #content > *
-    $('#'+where).attr("class", class_name).load(from + ' #' + where + '> *');
+//    $('#'+where).attr("class", class_name).load(from + ' #' + where + '> *');
+
+    
 }
 
 /**
@@ -24,14 +26,16 @@ function loader(e) {
  */
 $(document).ready(function() {
 //    Redirect unfinished pages
-    $(".link-place, .link-picture, .link-source-citation, .link-social-entity").attr("href", "home.htm");
+//    $(".link-place, .link-picture, .link-source-citation, .link-social-entity").attr("href", "home.htm");
+
 //    Toggler for different lists...
-    $("ul, li, .toc-list, .annotation, .individual-information").hover(function () {
-      $(this).addClass("mouse-is-over").children("label").bind("click", toggler);    
+    $("ul, li").hover(function () {
+      $(this).addClass("mouse-is-over").children("span").bind("click", toggler);    
     }, function () {
-      $(this).removeClass("mouse-is-over").children("label").unbind("click", toggler);
+      $(this).removeClass("mouse-is-over").children("span").unbind("click", toggler);
     });
 
 //    $(".header-item > a").click(loader);
-    $(".header-item > a").live("click", loader);
+    $(".menu-item > a").bind("click", loader);
+    
 });

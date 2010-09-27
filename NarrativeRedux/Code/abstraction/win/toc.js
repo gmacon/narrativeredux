@@ -41,7 +41,7 @@ function ToC(abstract_collection, class_name) {
 //Start of person info
       Report.WriteFormatted        ("<li class='{0}'>", abstract_list_item_class_name);
       Report.WriteFormatted         ("<a href='./{0}.html'>", current_item.id());
-      Report.WriteFormatted          ("<span class='{2} {3}-{2} {1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 3), (current_item.pictures_count() > 0 ? "photographied" : ""), "toc-list-depth-2", class_name);
+      Report.WriteFormatted          ("<span class='{2} {3}-{2} {1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 3), (current_item.pictures_count() > 0 ? "photographied" : ""), "toc-list-depth-3", class_name);
       Report.Write                  ("</a>");
       Report.Write                  ("<span class='individual-toc-birth-date'></span>");
       Report.Write                 ("</li>");

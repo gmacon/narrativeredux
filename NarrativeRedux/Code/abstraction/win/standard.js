@@ -8,10 +8,10 @@
 function WriteStandardMenu() {
     Report.Write("<ul class='menu-list'>");
     Report.Write  ("<li class='menu-item menu-home'>");
-    Report.WriteFormatted("<a href='./home.htm' title='{0}' name='content'></a>", Dic("AltHome"));
+    Report.WriteFormatted("<a href='./home.html' title='{0}' name='content'></a>", Dic("AltHome"));
     Report.Write  ("</li>");
     Report.Write  ("<li class='menu-item menu-individuals-toc'>");
-    Report.Write    ("<a href='./individuals-toc.htm' title='{0}' name='left-sidebar'></a>", Dic("AltIndividuals"));
+    Report.WriteFormatted("<a href='./individuals-toc.html' title='{0}' name='left-sidebar'></a>", Dic("AltIndividuals"));
     Report.Write  ("</li>");
     Report.Write("</ul>");
 }

@@ -174,7 +174,6 @@ div.expanded > div {
 
 /*First letter of surname*/
 .individual-toc-depth-1 > .collapsed {
-    float: left;
 }
 /*.collapsed .toc-individual-surname-first-letter {*/
 /*    float: left;*/
@@ -184,7 +183,7 @@ div.expanded > div {
 /*    clear: left;*/
 /*}*/
 
-.individual-toc-depth-1 > .mouse-is-over > label {
+.individual-toc-depth-1 .mouse-is-over span {
     padding-left: 4px;
     padding-right: 4px;
     color: #ffffff;

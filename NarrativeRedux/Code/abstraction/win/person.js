@@ -14,7 +14,7 @@ function People(ordered) {
    * @param index Item number in collection.
    */
   this.item = function(index) {
-    return new Person(Individuals(i));
+    return new Person(Individuals(index));
   }
   
   /**
