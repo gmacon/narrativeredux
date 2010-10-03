@@ -2,23 +2,19 @@
  *  Toggle between collapsed and expanded styles
  */
 function toggler() {
-      $(this).parent("ul").toggleClass("collapsed");
+      if($(this).next().hasClass("collapsed") ^ $(this).next().hasClass("expanded")) {
+        $(this).next().toggleClass("collapsed").toggleClass("expanded");
+      }
 }
 
-
-function loader(e) {
+function load_menu_item(e) {
+  if($(this).attr("class").search('toc-item') == -1) {
     e.preventDefault();
-//    In name attribute is hidden place where to load links content
-    var where = $(this).attr("name");
-//    Where is content to read?
-    var from  = $(this).attr("href");
+  }
+  
+  var from  = $(this).attr("href");
     
-//    ./home.html -> home
-//    var class_name = from.substring(2, from.lastIndexOf('.'));
-//    e.g.: get #content, set class: home, load: ./home.html #content > *
-//    $('#'+where).attr("class", class_name).load(from + ' #' + where + '> *');
-
-    
+  $(".menu-list > .menu-container").load(from + ' #content > *');
 }
 
 /**
@@ -29,13 +25,9 @@ $(document).ready(function() {
 //    $(".link-place, .link-picture, .link-source-citation, .link-social-entity").attr("href", "home.htm");
 
 //    Toggler for different lists...
-    $("ul, li").hover(function () {
-      $(this).addClass("mouse-is-over").children("span").bind("click", toggler);    
-    }, function () {
-      $(this).removeClass("mouse-is-over").children("span").unbind("click", toggler);
+    $("body").delegate("ul, li", "hover", function () {
+      $(this).toggleClass("mouse-is-over").delegate("span", "click", toggler);
     });
-
-//    $(".header-item > a").click(loader);
-    $(".menu-item > a").bind("click", loader);
     
+    $(".menu-individuals-toc").delegate("a", "click", load_menu_item);
 });

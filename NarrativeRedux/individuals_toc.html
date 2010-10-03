@@ -36,19 +36,20 @@
     <script type="text/javascript" src="./js/mindless-effects.js"></script>
   </head>
   <body>
-    <div class="main">
-        <div class="header">
-            <%[ WriteStandardMenu(); ]%>
-        </div>
-        <div id="content" class="individuals-toc">
-            <%[
-            (new ToC(new People(true), "individual")).write();
-            //WriteIndividualsToc();
-            ]%>
-        </div>
-        <div class="footer">
-            <%[ WriteStandardFooter(); ]%>
-        </div>
+    <div class="menu">
+        <%[ WriteStandardMenu(); ]%>
+    </div>
+    <div id="content" class="toc individuals-toc">
+        <%[ 
+        var people = new People();
+        people.ordered(true);
+        var toc = new ToC(people, "individual");
+        toc.is_collapsed(true);
+        toc.write()
+        ]%>
+    </div>
+    <div class="footer">
+        <%[ WriteStandardFooter(); ]%>
     </div>
   </body>
 </html>

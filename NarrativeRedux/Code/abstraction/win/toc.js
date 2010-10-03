@@ -10,7 +10,16 @@
  * @param abstract_collection
  * @param class_name class used in css
  */
-function ToC(abstract_collection, class_name) {  
+function ToC(abstract_collection, class_name) {
+  this.collapsed = false;
+  
+  /**
+   * Indicates if toc should be collapsed
+   * @param collapsed
+   */
+  this.is_collapsed = function(collapsed) {
+    this.collapsed = collapsed;
+  }
   /**
    * @param depth Depth in ToC tree e.g. 0 = first letter of surname, 1 = last name, 2 = first name.
    */
@@ -29,21 +38,21 @@ function ToC(abstract_collection, class_name) {
 //Start of first letter of surname
       if((i == 0) || (abstract_collection.item_at_depth(last_item, 1) != abstract_collection.item_at_depth(current_item, 1))) {
         Report.WriteFormatted("<li class='{0}'>", abstract_list_item_class_name);
-        Report.WriteFormatted ("<span class='{1}, {2}-{1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 1), "toc-list-depth-1", class_name);
-        Report.WriteFormatted  ("<ul class='{0}'>", abstract_list_class_name);
+        Report.WriteFormatted ("<span class='{1} {2}-{1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 1), "toc-depth-1", class_name);
+        Report.WriteFormatted  ("<ul class='{0} {1} {2}'>", abstract_list_class_name, (this.collapsed ? "collapsed" : ""), "toc-list-depth-1");
       }
 //Start of surname
       if((i == 0) || (abstract_collection.item_at_depth(last_item, 2) != abstract_collection.item_at_depth(current_item, 2))) {
         Report.WriteFormatted   ("<li class='{0}'>", abstract_list_item_class_name);
-        Report.WriteFormatted    ("<span class='{1} {2}-{1}' id='{0}'>{0}</span>", abstract_collection.item_at_depth(current_item, 2), "toc-list-depth-2", class_name);
-        Report.WriteFormatted     ("<ul class='{0}'>", abstract_list_class_name);
+        Report.WriteFormatted    ("<span class='{1} {2}-{1}' id='{0}'>{0}</span>", abstract_collection.item_at_depth(current_item, 2), "toc-depth-2", class_name);
+        Report.WriteFormatted     ("<ul class='{0} {1} {2}'>", abstract_list_class_name, (this.collapsed ? "collapsed" : ""), "toc-list-depth-2");
       }
 //Start of person info
       Report.WriteFormatted        ("<li class='{0}'>", abstract_list_item_class_name);
       Report.WriteFormatted         ("<a href='./{0}.html'>", current_item.id());
-      Report.WriteFormatted          ("<span class='{2} {3}-{2} {1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 3), (current_item.pictures_count() > 0 ? "photographied" : ""), "toc-list-depth-3", class_name);
+      Report.WriteFormatted          ("<span class='{2} {3}-{2} {1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 3), (current_item.pictures_count() > 0 ? "photographied" : ""), "toc-depth-3", class_name);
       Report.Write                  ("</a>");
-      Report.Write                  ("<span class='individual-toc-birth-date'></span>");
+      Report.WriteFormatted         ("<span class='{0}'></span>", "date" + class_name + "-toc-date");
       Report.Write                 ("</li>");
 //End of person info
       

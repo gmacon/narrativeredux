@@ -6,8 +6,12 @@
  * Its purpose is to use same code in skin even if you change default 'Report Generator' for different (alternative) one.
  */
  
-function People(ordered) {
-  this.collection = (ordered ? Individuals.SortBy("name.last, -name.first, name.middle") : Individuals);
+function People() {
+  this.collection = Individuals;
+  
+  this.ordered = function(is_in_order) {
+    this.collection = (is_in_order ? Individuals.SortBy("name.last, -name.first, name.middle") : Individuals);
+  }
   
   /**
    * Returns item which this class collects.

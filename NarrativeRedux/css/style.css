@@ -16,8 +16,8 @@ a:hover {
     color: #FFBF48;
 }
 
-div {
-/*    border: 2px solid gray;*/
+ul, ol {
+  list-style: none;
 }
 
 h1, h2, h3, 
@@ -26,64 +26,21 @@ ul, ol, div, a {
     padding: 0px;
 }
 
-label {
-    padding-left: 0px;
+ul.collapsed {
+  display: none;
+}
+ul.expanded {
+  display: list-item;
 }
 
-sup {
-    display: inline;
-}
 
-img {
-    border-width: 0px;
-}
-
-small,
-.mouse-is-over > label > small {
-    font-size: smaller;
-}
-
-div.main {
-    float: left;
-    width: 100%;
-/*    border: 2px solid gray;*/
-}
-
-div.menu,
-div.footer {
-    float: left;
-    clear: left;
-    width: 100%;
-/*    border: 2px solid blue;*/
-}
-
-#content {
-/*    border: 2px solid yellow;*/
-/*    margin-left: 310px;*/
-    margin-left: auto;
-    width: 100%;
-}
-
-.footer {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-}
-
-/**
- *  Toggler
- */
-div.collapsed > div {
-    display: none;
-}
-
-div.expanded > div {
-    display: list-item;
-}
-
-.mouse-is-over > label {
-    padding-left: 4px;
+.menu,
+#content,
+.footer,
+.menu-list,
+.menu-container {
+  float: left;
+  clear: both;
 }
 
 /**
@@ -130,183 +87,85 @@ div.expanded > div {
 }
 
 /**
- *  Menu
+ * Menu
  */
- .menu {
-     margin-top: 10px;
- }
- 
- .menu-list {
-     list-style: none;
-     float: left;
- }
- 
 .menu-item {
-    float: left;
+  float: left;
+}
+
+.menu-item > a {
+  float: left;
+  width: 0px;
+  height: 0px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .menu-home a {
-    background-image: url('../images/toc_home.jpg');
-    background-repeat: no-repeat;
-/*    Image is 32x32: 16=top=bottom=left=right*/
-    padding: 16px 16px 16px 16px;
+  background-image: url(../images/toc_home.jpg);
 }
 
 .menu-individuals-toc a {
-    background-image: url('../images/toc_individuals.jpg');
-    background-repeat: no-repeat;
-/*    Image is 32x32: 16=top=bottom=left=right*/
-    padding: 16px 16px 16px 16px;
+  background-image: url(../images/toc_individuals.jpg);
 }
 
-/**
- *  Table Of Contents
- */
-.individuals-toc {
-/*    width: 300px;*/
+.menu-container a {
+  background-image: none;
 }
 
-.individual-toc,
-.individual-information {
-    list-style: none;
-    padding: 0px 0px 0px 0px;
+.menu-container .toc-list .toc-item {
+  float: left;
 }
 
-/*First letter of surname*/
-.individual-toc-depth-1 > .collapsed {
-}
-/*.collapsed .toc-individual-surname-first-letter {*/
-/*    float: left;*/
-/*}*/
-
-/*.expanded .toc-individual-surname-first-letter {*/
-/*    clear: left;*/
-/*}*/
-
-.individual-toc-depth-1 .mouse-is-over span {
-    padding-left: 4px;
-    padding-right: 4px;
-    color: #ffffff;
-}
-
-/*Surname*/
-.individual-toc-depth-2 {
-    clear: right;
-}
-
-.toc-list {
-  list-style: none;
+.menu-container .toc-list-depth-0 > ul {
+  position: relative;
+  top: 5px;
+  padding: 4px;
 }
 
 .toc-item {
+  position: relative;
+  background-color: #B05F3C;
+}
+
+.toc-item span {
+  cursor: pointer;
+}
+
+.toc-depth-2,
+.toc-depth-3 {
+  border-left-width: thick;
+  border-left-style: solid;
+  border-left-color: orange;
+}
+
+.toc-list {
+  position: absolute;
+}
+.toc-depth-2 {
   display: block;
-  padding-left: 5px;
 }
 
-.toc-list > li {
-    margin-left: 5px;
+.toc-depth-3 {
+  position: static;
+  display: block;
+  clear: right;
 }
 
-.individual-information label {
-    font-weight: bold;
+.toc-list-depth-2 {
+  z-index: 2;
+  left: 20px;
 }
 
-.individual-birth-date {
-    padding-left: 3px;
-}
-
-/**
- *  Annotation
- */
-.annotation {
-    font-size: small;
-    list-style: none;
-    padding: 0px 0px 0px 0px;
-}
-
-.annotation .annotation-comment {
-    position: relative;
-    left: 10px;
+.toc-list-depth-2 li {
+  width: 100%
 }
 
 /**
- *  Front page
+ * Content
  */
-.popular-content {
-/*    border: 2px solid yellow;*/
-/*    float: right;*/
-}
-
-.popular-names,
-.popular-places {
-    float: left;
-    display: inline;
-    width: 48%;
-    padding-top: 5px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-bottom: 5px;
-}
-
-.popular-names-list,
-.popular-places-list {
-    float: left;
-    list-style: none;
-    padding-left: 2px;
-}
-
-.popular-names-list li,
-.popular-places-list li {
-    float: left;
-    padding: 1px 2px;
-}
-
-.popular-names small,
-.popular-places small {
-    padding-left: 2px;
-} 
-
-/**
- *  Individual page
- */
- .individual-title {
-     font-size: 24px;
- }
- 
-.individual-information {
-    display: block;
-    padding-top: 5px;
-    padding-left: 5px;
-} 
-
-.individual-pictures {
-    display: block;
-    float: left;
-    padding: 10px;
-    width: 200px;
-}
-
-.individual-pictures img {
-    width: 200px;
-    height: 250px;
-}
-
-.individual-pictures .caption {
-    text-align: right;
-    padding: 2px;
-    margin-bottom: 5px;
-}
-
-.individual-narrative div {
-    display: inline;
-}
-
-.education-item,
-.occupation-item,
-.occupancy-item,
-.additional-item {
-/*We aren't using padding-left (because it don't work) because of left-floated individual picture. */
-    position: relative;
-    left: 10px;
-    padding-bottom: 10px;
+#content {
+  margin-top: 1em;
 }
