@@ -35,14 +35,19 @@ function ToC(abstract_collection, class_name) {
       var current_item = new abstract_collection.item(i);
       var next_item = new abstract_collection.item(i+1);
     
+      var start_of_1 = abstract_collection.item_at_depth(last_item, 1) != abstract_collection.item_at_depth(current_item, 1);
+      var start_of_2 = abstract_collection.item_at_depth(last_item, 2) != abstract_collection.item_at_depth(current_item, 2);
+      var end_of_1 = abstract_collection.item_at_depth(current_item, 1) != abstract_collection.item_at_depth(next_item, 1);
+      var end_of_2 = abstract_collection.item_at_depth(current_item, 2) != abstract_collection.item_at_depth(next_item, 2);
+            
 //Start of first letter of surname
-      if((i == 0) || (abstract_collection.item_at_depth(last_item, 1) != abstract_collection.item_at_depth(current_item, 1))) {
+      if((i == 0) || start_of_1) {
         Report.WriteFormatted("<li class='{0}'>", abstract_list_item_class_name);
-        Report.WriteFormatted ("<span class='{1} {2}-{1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 1), "toc-depth-1", class_name);
+        Report.WriteFormatted ("<span class='{1} {2}-{1}'>{0}</span>", abstract_collection.item_at_depth(current_item, 1), "toc-depth-1", class_name)
         Report.WriteFormatted  ("<ul class='{0} {1} {2}'>", abstract_list_class_name, (this.collapsed ? "collapsed" : ""), "toc-list-depth-1");
       }
-//Start of surname
-      if((i == 0) || (abstract_collection.item_at_depth(last_item, 2) != abstract_collection.item_at_depth(current_item, 2))) {
+//Start of surname          
+      if((i == 0) || start_of_2) {
         Report.WriteFormatted   ("<li class='{0}'>", abstract_list_item_class_name);
         Report.WriteFormatted    ("<span class='{1} {2}-{1}' id='{0}'>{0}</span>", abstract_collection.item_at_depth(current_item, 2), "toc-depth-2", class_name);
         Report.WriteFormatted     ("<ul class='{0} {1} {2}'>", abstract_list_class_name, (this.collapsed ? "collapsed" : ""), "toc-list-depth-2");
@@ -55,15 +60,15 @@ function ToC(abstract_collection, class_name) {
       Report.WriteFormatted         ("<span class='{0}'></span>", "date" + class_name + "-toc-date");
       Report.Write                 ("</li>");
 //End of person info
-      
+
 //End of surname
-      if(abstract_collection.item_at_depth(current_item, 2) != abstract_collection.item_at_depth(next_item, 2)) {
+      if(end_of_2) {
         Report.Write        ("</ul>");
         Report.Write      ("</li>");
       }
       
 //End of first letter of surname    
-      if(abstract_collection.item_at_depth(current_item, 1) != abstract_collection.item_at_depth(next_item, 1)) {
+      if(end_of_1) {
         Report.Write    ("</ul>");
         Report.Write  ("</li>");
       }

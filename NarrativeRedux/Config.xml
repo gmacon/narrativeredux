@@ -22,7 +22,7 @@
 <!--    <Report Template="individual.html" OutputFile="{Name.LastOrLast2:25}-{Name.FirstAndMiddle:35}-{id}.html" For="Individuals" LoopItemName="i" />-->
 		<Report Template="individual.html" OutputFile="{id}.html" For="Individuals" LoopItemName="i" />
 
-		<StartPage>ind00053.html</StartPage>
+		<StartPage>index.html</StartPage>
 
 	</ReportGenerator>
 </Skin>

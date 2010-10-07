@@ -80,7 +80,6 @@ ul.expanded {
  */
 /*Add photo to links background. (In order to remove duplicated links in html structure)*/
 .individual-toc a .photographied {
-    padding-right: 18px;
     background-image: url('../images/photo.gif');
     background-repeat: no-repeat;
     background-position: right center;
@@ -111,6 +110,10 @@ ul.expanded {
   background-image: url(../images/toc_individuals.jpg);
 }
 
+.menu-container {
+  height: 2em;
+}
+
 .menu-container a {
   background-image: none;
 }
@@ -132,26 +135,74 @@ ul.expanded {
 
 .toc-item span {
   cursor: pointer;
+  width: 10em;
+}
+
+.toc-depth-1:hover,
+.toc-depth-2:hover,
+.toc-depth-3:hover {
+  background-color: #C06F4C;
+}
+
+.toc-list-depth-0,
+.toc-list-depth-1 > .toc-item:first-child span,
+.toc-list-depth-2 > .toc-item:first-child span {
+  border-top-width: thin;
+  border-top-style: solid;
+  border-top-color: orange;
+}
+
+.toc-depth-1,
+.toc-list-depth-1 > .toc-item:last-child span,
+.toc-list-depth-2 > .toc-item:last-child span {
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: orange;
 }
 
 .toc-depth-2,
-.toc-depth-3 {
+.toc-depth-3,
+.toc-list-depth-0 > .toc-item:first-child span {
   border-left-width: thick;
   border-left-style: solid;
   border-left-color: orange;
 }
 
+.toc-depth-2,
+.toc-depth-3,
+.toc-list-depth-0 > .toc-item:last-child span {
+  border-right-width: thin;
+  border-right-style: solid;
+  border-right-color: orange;
+}
+
 .toc-list {
   position: absolute;
 }
+
+.toc-depth-1 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
 .toc-depth-2 {
   display: block;
+  
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 
 .toc-depth-3 {
   position: static;
   display: block;
   clear: right;
+  
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 
 .toc-list-depth-2 {
