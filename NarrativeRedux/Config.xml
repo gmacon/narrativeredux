@@ -19,6 +19,7 @@
 <!--    Generate Report Files    -->
     <Report Template="index.html" />
     <Report Template="individuals_toc.html" />
+    <Report Template="families_toc.html" />
 <!--    <Report Template="individual.html" OutputFile="{Name.LastOrLast2:25}-{Name.FirstAndMiddle:35}-{id}.html" For="Individuals" LoopItemName="i" />-->
 		<Report Template="individual.html" OutputFile="{id}.html" For="Individuals" LoopItemName="i" />
 

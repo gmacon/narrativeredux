@@ -29,5 +29,5 @@ $(document).ready(function() {
       $(this).toggleClass("mouse-is-over").delegate("span", "click", toggler);
     });
     
-    $(".menu-individuals-toc").delegate("a", "click", load_menu_item);
+    $(".menu-toc").delegate("a", "click", load_menu_item);
 });

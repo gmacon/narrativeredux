@@ -79,6 +79,7 @@ ul.expanded {
  *  Thing/person has photo?
  */
 /*Add photo to links background. (In order to remove duplicated links in html structure)*/
+.family-toc a .photographied,
 .individual-toc a .photographied {
     background-image: url('../images/photo.gif');
     background-repeat: no-repeat;
@@ -108,6 +109,10 @@ ul.expanded {
 
 .menu-individuals-toc a {
   background-image: url(../images/toc_individuals.jpg);
+}
+
+.menu-families-toc a {
+  background-image: url(../images/toc_families.jpg);
 }
 
 .menu-container {
