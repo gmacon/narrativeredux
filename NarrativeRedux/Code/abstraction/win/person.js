@@ -1,14 +1,15 @@
 /**
- * Abstract layer for individual.
+ * File: person.js
+ * Part of Abstract Layer.
+ *
+ * This is abstract layer for individual.
  * Its purpose is to use same code in skin even if you change default 'Report Generator' for different (alternative) one.
  */
- 
-function People(ordered) {
-   this.collection = (ordered ? Individuals.SortBy("name.last, -name.first, name.middle") : Individuals);
- };
- 
 function Person(person) {
-  
+//  if(person typeof number) {
+//    person = Individuals(person);
+//  }
+
   this.age = function() {
     return person.Age;
   }
@@ -56,7 +57,7 @@ function Person(person) {
   }
   this.birth_place = function() {
     return person.Birth.Place;
-  }  
+  }
   this.birth_pregnancy_length = function() {
     return person.Birth.PregnancyLength;
   }
@@ -298,7 +299,7 @@ function Person(person) {
     return person.Hyperlink.Target;
   }
   this.id = function() {
-    return this.identifier;
+    return person.ID;
   }
   this.individual_internal_hyperlink = function() {
     return person.IndividualInternalHyperlink;
@@ -335,7 +336,7 @@ function Person(person) {
   }
   this.name_display = function() {
     return person.Name.Display;
-  }   
+  }
   this.name_display_format = function() {
     return person.Name.Display.Format;
   }
@@ -407,7 +408,7 @@ function Person(person) {
   }
   this.position_genomap = function() {
     return person.Position.GenoMap;
-  }  
+  }
   this.position_is_hidden = function() {
     return person.Position.IsHidden;
   }

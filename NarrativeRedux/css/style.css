@@ -1,122 +1,70 @@
 /**
- *  General 
+ *  General
  */
 body {
     background-color: #B05F3C;
-/*    background-color: #FFFFFF;*/
 }
 
 a {
     text-decoration: none;
-/*    color: #444444;*/
     color: #FF9331;
 }
 a:hover {
-/*    color: #888888;*/
     color: #FFBF48;
 }
 
-div {
-/*    border: 2px solid gray;*/
+ul, ol {
+  list-style: none;
 }
 
-h1, h2, h3, 
+h1, h2, h3,
 ul, ol, div, a {
     margin: 0px;
     padding: 0px;
 }
 
-label {
-    padding-left: 0px;
+ul.collapsed {
+  display: none;
+}
+ul.expanded {
+  display: list-item;
 }
 
-sup {
-    display: inline;
-}
-
-img {
-    border-width: 0px;
-}
-
-small,
-.mouse-is-over > label > small {
-    font-size: smaller;
-}
-
-div.main {
-    float: left;
-    width: 100%;
-/*    border: 2px solid gray;*/
-}
-
-div.header,
-div.footer {
-    float: left;
-    clear: left;
-    width: 100%;
-/*    border: 2px solid blue;*/
-}
-
-#sidebar {
-    float: left;
-    width: 20%;
-}
-
-#content {
-/*    border: 2px solid yellow;*/
-/*    margin-left: 310px;*/
-    margin-left: auto;
-    width: 80%;
-}
-
-.footer {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-}
-
-/**
- *  Toggler
- */
-div.collapsed > div {
-    display: none;
-}
-
-div.expanded > div {
-    display: list-item;
-}
-
-.mouse-is-over > label {
-    padding-left: 4px;
+#header,
+#content,
+#footer,
+.menu-list,
+.menu-container {
+  float: left;
+  clear: both;
 }
 
 /**
  *  Gender
  */
 .gender_ {
-    background-image: url('./images/gender_.gif');
+    background-image: url('../images/gender_.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_M {
-    background-image: url('./images/gender_Ms.gif');
+    background-image: url('../images/gender_Ms.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_F {
-    background-image: url('./images/gender_Fs.gif');
+    background-image: url('../images/gender_Fs.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
 }
 
 .gender_P {
-    background-image: url('./images/gender_P.gif');
+    background-image: url('../images/gender_P.gif');
     background-repeat: no-repeat;
     background-position: left center;
     padding-left: 16px;
@@ -127,184 +75,150 @@ div.expanded > div {
  *  Thing/person has photo?
  */
 /*Add photo to links background. (In order to remove duplicated links in html structure)*/
-.photographied a {
-    padding-right: 18px;
-    background-image: url('./images/photo.gif');
+.family-toc a .photographied,
+.individual-toc a .photographied {
+    background-image: url('../images/photo.gif');
     background-repeat: no-repeat;
     background-position: right center;
 }
 
 /**
- *  Header
+ * Menu
  */
- .header {
-     margin-top: 10px;
- }
- 
- .header-list {
-     list-style: none;
-     float: left;
- }
- 
-.header-item {
-    float: left;
+.menu-item {
+  float: left;
+  margin-bottom: 5px;
 }
 
-.header-home a {
-    background-image: url('./images/toc_home.jpg');
-    background-repeat: no-repeat;
-/*    Image is 32x32: 16=top=bottom=left=right*/
-    padding: 16px 16px 16px 16px;
+.menu-item > a {
+  float: left;
+  width: 0px;
+  height: 0px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
-.header-toc-individuals a {
-    background-image: url('./images/toc_individuals.jpg');
-    background-repeat: no-repeat;
-/*    Image is 32x32: 16=top=bottom=left=right*/
-    padding: 16px 16px 16px 16px;
+.menu-home a {
+  background-image: url(../images/toc_home.jpg);
 }
 
-/**
- *  Table Of Contents
- */
-.toc-individuals {
-/*    width: 300px;*/
+.menu-individuals-toc a {
+  background-image: url(../images/toc_individuals.jpg);
 }
 
-.toc-individual,
-.individual-information {
-    list-style: none;
-    padding: 0px 0px 0px 0px;
+.menu-families-toc a {
+  background-image: url(../images/toc_families.jpg);
 }
 
-.toc-individual-surname-first-letter > .collapsed {
-    float: left;
-}
-/*.collapsed .toc-individual-surname-first-letter {*/
-/*    float: left;*/
-/*}*/
-
-/*.expanded .toc-individual-surname-first-letter {*/
-/*    clear: left;*/
-/*}*/
-
-.toc-individual-surname-first-letter > .mouse-is-over > label {
-    padding-left: 4px;
-    padding-right: 4px;
-    color: #ffffff;
+.menu-container {
+  height: 2em;
 }
 
-.toc-individual-surname {
-    clear: right;
+.menu-container a {
+  background-image: none;
+}
+
+.menu-container .toc-list .toc-item {
+  float: left;
+}
+
+.menu-container .toc-list-depth-0 > ul {
+  position: relative;
+  top: 5px;
+  padding: 4px;
 }
 
 .toc-item {
-    padding-left: 5px;
-}
-.toc-list > div {
-    margin-left: 5px;
+  position: relative;
+  background-color: #B05F3C;
 }
 
-.individual-information label {
-    font-weight: bold;
+.toc-item span {
+  cursor: pointer;
+  width: 10em;
 }
 
-.individual-birth-date {
-    padding-left: 3px;
+.toc-depth-1:hover,
+.toc-depth-2:hover,
+.toc-depth-3:hover {
+  background-color: #C06F4C;
+}
+
+.toc-list-depth-0,
+.toc-list-depth-1 > .toc-item:first-child span,
+.toc-list-depth-2 > .toc-item:first-child span {
+  border-top-width: thin;
+  border-top-style: solid;
+  border-top-color: orange;
+}
+
+.toc-depth-1,
+.toc-list-depth-1 > .toc-item:last-child span,
+.toc-list-depth-2 > .toc-item:last-child span {
+  border-bottom-width: thin;
+  border-bottom-style: solid;
+  border-bottom-color: orange;
+}
+
+.toc-depth-2,
+.toc-depth-3,
+.toc-list-depth-0 > .toc-item:first-child span {
+  border-left-width: thick;
+  border-left-style: solid;
+  border-left-color: orange;
+}
+
+.toc-depth-2,
+.toc-depth-3,
+.toc-list-depth-0 > .toc-item:last-child span {
+  border-right-width: thin;
+  border-right-style: solid;
+  border-right-color: orange;
+}
+
+.toc-list {
+  position: absolute;
+}
+
+.toc-depth-1 {
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+
+.toc-depth-2 {
+  display: block;
+
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+.toc-depth-3 {
+  position: static;
+  display: block;
+  clear: right;
+
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+}
+
+.toc-list-depth-2 {
+  z-index: 2;
+  left: 20px;
+}
+
+.toc-list-depth-2 li {
+  width: 100%
 }
 
 /**
- *  Annotation
+ * Content
  */
-.annotation {
-    font-size: small;
-    list-style: none;
-    padding: 0px 0px 0px 0px;
-}
-
-.annotation .annotation-comment {
-    position: relative;
-    left: 10px;
-}
-
-/**
- *  Front page
- */
-.popular-content {
-/*    border: 2px solid yellow;*/
-/*    float: right;*/
-}
-
-.popular-names,
-.popular-places {
-    float: left;
-    display: inline;
-    width: 48%;
-    padding-top: 5px;
-    padding-left: 4px;
-    padding-right: 4px;
-    padding-bottom: 5px;
-}
-
-.popular-names-list,
-.popular-places-list {
-    float: left;
-    list-style: none;
-    padding-left: 2px;
-}
-
-.popular-names-list li,
-.popular-places-list li {
-    float: left;
-    padding: 1px 2px;
-}
-
-.popular-names small,
-.popular-places small {
-    padding-left: 2px;
-} 
-
-/**
- *  Individual page
- */
- .individual-title {
-     font-size: 24px;
- }
- 
-.individual-information {
-    display: block;
-    padding-top: 5px;
-    padding-left: 5px;
-} 
-
-.individual-pictures {
-    display: block;
-    float: left;
-    padding: 10px;
-    width: 200px;
-}
-
-.individual-pictures img {
-    width: 200px;
-    height: 250px;
-}
-
-.individual-pictures .caption {
-    text-align: right;
-    padding: 2px;
-    margin-bottom: 5px;
-}
-
-.individual-narrative div {
-    display: inline;
-}
-
-.education-item,
-.occupation-item,
-.occupancy-item,
-.additional-item {
-/*We aren't using padding-left (because it don't work) because of left-floated individual picture. */
-    position: relative;
-    left: 10px;
-    padding-bottom: 10px;
+#content {
+  margin-top: 1em;
 }

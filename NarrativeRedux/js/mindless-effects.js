@@ -2,21 +2,20 @@
  *  Toggle between collapsed and expanded styles
  */
 function toggler() {
-      $(this).parent("div").toggleClass("collapsed").toggleClass("expanded");
+  var obj = $(this).next();
+  if(obj.hasClass("collapsed") ^ obj.hasClass("expanded")) {
+    obj.toggleClass("collapsed").toggleClass("expanded");
+  }
 }
 
-
-function loader(e) {
+function load_menu_item(e) {
+  if($(this).attr("class").search('toc-item') == -1) {
     e.preventDefault();
-//    In name attribute is hidden place where to load links content
-    var where = $(this).attr("name");
-//    Where is content to read?
-    var from  = $(this).attr("href");
-    
-//    ./home.html -> home
-    var class_name = from.substring(2, from.lastIndexOf('.'));
-//    e.g.: get #content, set class: home, load: ./home.html #content > *
-    $('#'+where).attr("class", class_name).load(from + ' #' + where + '> *');
+  }
+
+  var from  = $(this).attr("href");
+
+  $(".menu-list > .menu-container").load(from + ' #content > *');
 }
 
 /**
@@ -24,14 +23,14 @@ function loader(e) {
  */
 $(document).ready(function() {
 //    Redirect unfinished pages
-    $(".link-place, .link-picture, .link-source-citation, .link-social-entity").attr("href", "home.htm");
+//    $(".link-place, .link-picture, .link-source-citation, .link-social-entity").attr("href", "home.htm");
+    $(".family-toc-item a").delegate(".family-toc-depth-3", "click", function(e) { e.preventDefault(); });
+
 //    Toggler for different lists...
-    $("ul, li, .toc-list, .annotation, .individual-information").hover(function () {
-      $(this).addClass("mouse-is-over").children("label").bind("click", toggler);    
-    }, function () {
-      $(this).removeClass("mouse-is-over").children("label").unbind("click", toggler);
+    $("body").delegate("ul, li", "hover", function () {
+      $(this).toggleClass("mouse-is-over").delegate("span", "click", toggler);
     });
 
-//    $(".header-item > a").click(loader);
-    $(".header-item > a").live("click", loader);
+//    $(".menu-toc").delegate("a", "mouseover", load_menu_item);
+    $(".menu-toc").delegate("a", "click", load_menu_item);
 });

@@ -1,4 +1,6 @@
 <%[@IncludeFile "Code\abstraction\lib.js";]%>
+<%[ var p = new Family(f); ]%>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
@@ -15,12 +17,13 @@
     <div id="header" class="menu">
         <%[ WriteStandardMenu(); ]%>
     </div>
-    <div id="content" class="intro">
-      <%[ WriteStandardIntro(); ]%>
+    <div id="content" class="family">
+      <div class='family-title'>
+        <%[ Report.WriteFormatted("<h1><span class=''>{}</span></h1>", p.name()); ]%>
+      </div>
     </div>
     <div id="footer">
         <%[ WriteStandardFooter(); ]%>
     </div>
   </body>
-
 </html>

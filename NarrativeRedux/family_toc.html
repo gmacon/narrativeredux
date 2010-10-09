@@ -1,0 +1,55 @@
+<%[
+/*
+ * Idea is to hide this from viewing. Ajax should be used to retrieve families.
+ * Access to this data (in my personal opinion) should be by the upper menu.
+ * Something like:
+ * menu <- on_mouse_over/click
+ *   -(first letter of each family surname) <- on_mouse_over/click
+ *     -(surname) <- on_mouse_over/click
+ *       -(all families with specified surname)
+ *
+ * More graphical example...
+ *  [menu]
+ *    |-----------|
+ *    |A  B  C |D||
+ *    |--------|Danowicz--| (family surnames)
+ *             |Derwisz   |
+ *             |Długołęcki|
+ *             |---|Andrzej & Beata    | (families)
+ *                 |Norbert & Bernadeta|
+ *                 |Rafał              |
+ *                 |-------------------|
+ */
+]%>
+<%[@IncludeFile "Code\abstraction\lib.js";]%>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Language" content="@[]@" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%[]%></title>
+<!--    <meta name="description" content="@[]@" />-->
+<!--    <meta name="keywords" content="@[]@" />-->
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="./js/mindless-effects.js"></script>
+  </head>
+  <body>
+    <div id="header" class="menu">
+        <%[ WriteStandardMenu(); ]%>
+    </div>
+    <div id="content" class="toc individuals-toc">
+        <%[
+        var families = new Kin();
+        families.ordered(true);
+        var toc = new ToC(families, "family");
+        toc.is_collapsed(true);
+        toc.write();
+        ]%>
+    </div>
+    <div id="footer">
+        <%[ WriteStandardFooter(); ]%>
+    </div>
+  </body>
+</html>
