@@ -2,7 +2,7 @@
  * File: person.js
  * Part of Abstract Layer.
  * 
- * This is abstract layer for individual and collection of individuals.
+ * This is abstract layer for individual.
  * Its purpose is to use same code in skin even if you change default 'Report Generator' for different (alternative) one.
  */
 function Person(person) {

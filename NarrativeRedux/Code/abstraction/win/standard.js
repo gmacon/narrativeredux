@@ -41,5 +41,7 @@ function WriteStandardFooter() {
 }
 
 function WriteStandardIntro() {
-  Report.WriteFormatted(Dic("FmtHtmlHomeIntro"), 0, (new People()).count(), 0);
+  Report.WriteFormatted(Dic("FmtHtmlHomeIntro"), "TODO", (new People()).count(), (new Kin()).count());
 }
+
+var saver = Session;

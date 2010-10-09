@@ -1,5 +1,5 @@
 /**
- * File: union.js
+ * File: family.js
  * Part of Abstract Layer.
  *                                        
  * This is an abstract layer for family.
@@ -8,9 +8,13 @@
 // TODO:
 //Rename class and this file
 
-function Unions() {
+function Kin() {
   this.collection = Families;
   
+  /**
+   * Sets collection to be ordered.
+   * @param is_in_order If true collection is in specified order, if false: not.
+   */
   this.ordered = function(is_in_order) {
 //    Todo:
     this.collection = (is_in_order ? Families.SortBy("name") : Families);
@@ -21,7 +25,7 @@ function Unions() {
    * @param index Item number in collection.
    */
   this.item = function(index) {
-    return new Union(Families(index));
+    return new Family(Families(index));
   }
   
   /**
@@ -31,6 +35,7 @@ function Unions() {
   this.count = function() {
     return Families.count;
   }
+  
   /**
    * Returns different values on different depths.
    * @param f Item from this collection
@@ -41,6 +46,7 @@ function Unions() {
       case 1:
         return f.name().charAt(0);
       case 2:
+//        return Report.Write(f.husband());
 //        return f.husband().name_last();
         return f.name();
       case 3:
@@ -52,7 +58,8 @@ function Unions() {
   }
 }; 
 
-function Union(family) {
+//TODO
+function Family(family) {
   this.display_text = function() {
     return family.DisplayText;
   }
@@ -60,7 +67,7 @@ function Union(family) {
     return family.ID;
   }
   this.husband = function() {
-    return family.Husband;
+    return family.Husband.ToGenoCollection();
   }
   this.name = function() {
     return family.Name;

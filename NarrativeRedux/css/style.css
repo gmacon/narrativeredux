@@ -3,16 +3,13 @@
  */
 body {
     background-color: #B05F3C;
-/*    background-color: #FFFFFF;*/
 }
 
 a {
     text-decoration: none;
-/*    color: #444444;*/
     color: #FF9331;
 }
 a:hover {
-/*    color: #888888;*/
     color: #FFBF48;
 }
 
@@ -33,10 +30,9 @@ ul.expanded {
   display: list-item;
 }
 
-
-.menu,
+#header,
 #content,
-.footer,
+#footer,
 .menu-list,
 .menu-container {
   float: left;
@@ -91,6 +87,7 @@ ul.expanded {
  */
 .menu-item {
   float: left;
+  margin-bottom: 5px;
 }
 
 .menu-item > a {

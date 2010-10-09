@@ -8,6 +8,10 @@
 function People() {
   this.collection = Individuals;
   
+  /**
+   * Sets collection to be ordered.
+   * @param is_in_order If true collection is in specified order, if false: not.
+   */
   this.ordered = function(is_in_order) {
     this.collection = (is_in_order ? Individuals.SortBy("name.last, name.first, name.middle") : Individuals);
   }
