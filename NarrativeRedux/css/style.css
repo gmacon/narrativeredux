@@ -104,11 +104,11 @@ ul.expanded {
   background-image: url(../images/toc_home.jpg);
 }
 
-.menu-individuals-toc a {
+.menu-individual-toc a {
   background-image: url(../images/toc_individuals.jpg);
 }
 
-.menu-families-toc a {
+.menu-family-toc a {
   background-image: url(../images/toc_families.jpg);
 }
 
